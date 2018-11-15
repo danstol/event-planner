@@ -1,0 +1,14 @@
+.vscode/
+.idea/
+bin/
+include/
+lib/
+lib64
+share/
+
+pyvenv.cfg
+
+db.sqlite3
+
+event_planner/__pycache__
+polls/__pycache__
