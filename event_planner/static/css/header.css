@@ -1,0 +1,11 @@
+.header-classic {
+    background: #2d3246;
+}
+
+nav .navbar-nav li a:active, nav .navbar-nav li a:hover{
+  color: #2d3246 !important;
+}
+
+nav .navbar-nav li a{
+  color: #ffffff !important;
+}
