@@ -1,4 +1,4 @@
-.header-classic {
+.header-classic, .navbar {
     background: #2d3246;
 }
 
@@ -7,5 +7,13 @@ nav .navbar-nav li a:active, nav .navbar-nav li a:hover{
 }
 
 nav .navbar-nav li a{
+  color: #ffffff !important;
+}
+
+.navbar-brand{
+  color: #ffffff !important;
+}
+
+a {
   color: #ffffff !important;
 }
