@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from .core import urls as core_urls
+from .authentication import urls as authentication_urls
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('', include(core_urls)),
+    path('authentication/', include(authentication_urls))
 ]
 
 # path('accounts/', include('django.contrib.auth.urls'))

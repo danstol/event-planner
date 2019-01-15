@@ -12,3 +12,5 @@ db.sqlite3
 
 event_planner/__pycache__
 polls/__pycache__
+event_planner/authentication/__pycache__
+event_planner/core/__pycache__
