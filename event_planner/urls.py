@@ -19,11 +19,13 @@ from django.urls import path, include
 from .core import urls as core_urls
 from .authentication import urls as authentication_urls
 
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
     path('', include(core_urls)),
-    path('authentication/', include(authentication_urls))
+    path('admin/', admin.site.urls),
+    path('authentication/', include(authentication_urls)),
 ]
 
 # path('accounts/', include('django.contrib.auth.urls'))

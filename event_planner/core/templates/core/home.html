@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
- <h4>Welcome to SWIFT Event Planner</h4>
-</div>
+{% if user.is_authenticated %}
+    <div class="container">
+        <h4>Welcome {{user.username}} to SWIFT Event Planner</h4>
+    </div>
+{% else %}
+    <div class="container">
+        <h4>Please <a href="authentication/login">Login</a> To Use the Event Planner</h4>
+    </div>
+{% endif %}
 {% endblock content %}

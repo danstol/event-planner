@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
+{% block title %}Login{% endblock %}
+
 {% block content %}
 <div class="container">
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
     <div class="row">
 
         <div class="main">
@@ -20,20 +25,26 @@
                 <span class="span-or">or</span>
             </div>
 
-            <form role="form">
+            <form class="login" method="post">
+                {% csrf_token %}
                 <div class="form-group">
-                    <label for="inputUsernameEmail">Username or email</label>
-                    <input type="text" class="form-control" id="inputUsernameEmail">
+                    {{ form.user.errors }}
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    <!--<label for="id_username">Username or email</label>-->
+                    <!--<input type="text" class="form-control" id="id_username">-->
                 </div>
                 <div class="form-group">
-                    <a class="pull-right" href="#">Forgot password?</a>
-                    <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword">
+                    {{ form.password.errors }}
+                    {{ form.password.label_tag }} {{ form.password }}
+                    <!--<a class="pull-right" href="#">Forgot password?</a>-->
+                    <!--<label for="id_password">Password</label>-->
+                    <!--<input type="password" class="form-control" id="id_password" name="password" required="">-->
+                    <input type="hidden" name="next" value="{{ next }}">
                 </div>
                 <div class="checkbox pull-right">
                     <label>
-                        <input type="checkbox">
-                        Remember me </label>
+                        <input type="checkbox"> Remember me </label>
                 </div>
                 <button type="submit" class="btn btn btn-primary">
                     Log In
