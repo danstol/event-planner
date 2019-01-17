@@ -37,15 +37,17 @@
                 <div class="form-group">
                     {{ form.password.errors }}
                     {{ form.password.label_tag }} {{ form.password }}
-                    <!--<a class="pull-right" href="#">Forgot password?</a>-->
+                    <div class="form-group">
+                        <a class="pull-right" href="{% url 'authentication:password_reset' %}">Forgot password?</a>
+                    </div>
                     <!--<label for="id_password">Password</label>-->
                     <!--<input type="password" class="form-control" id="id_password" name="password" required="">-->
                     <input type="hidden" name="next" value="{{ next }}">
                 </div>
-                <div class="checkbox pull-right">
-                    <label>
-                        <input type="checkbox"> Remember me </label>
-                </div>
+                <!--<div class="checkbox pull-right">-->
+                    <!--<label>-->
+                        <!--<input type="checkbox"> Remember me </label>-->
+                <!--</div>-->
                 <button type="submit" class="btn btn btn-primary">
                     Log In
                 </button>

@@ -123,9 +123,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'authentication/login'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "event_planner/static")
 ]
+
+# Login Options
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'authentication/login'
+
+# Email Options
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ['EP_EMAIL_HOST']
+EMAIL_HOST_PASSWORD = os.environ['EP_EMAIL_PASSWORD']
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'SwiftSupport <support@stolaconsulting.com>'
