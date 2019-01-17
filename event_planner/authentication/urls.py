@@ -7,7 +7,8 @@ from . import views
 app_name = 'authentication'
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='authentication/login.html'), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name='authentication/login.html',
+                                                redirect_authenticated_user=True), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='authentication/logout.html'), name='logout'),
     path('signup/', views.signup, name='signup'),
     path('password_reset/', auth_views.PasswordResetView
@@ -27,4 +28,5 @@ urlpatterns = [
     path('reset/done/',
          auth_views.PasswordResetCompleteView.as_view(template_name='authentication/password_reset_complete.html'),
          name='password_reset_complete'),
+    path('activate/<uidb64>/<token>/', views.activate, name='activate'),
 ]
